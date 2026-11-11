@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlywaysGo Admin</title><link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
+<body class="admin-page"><div class="admin-wrap">
+  <div class="admin-top"><a class="brand" href="index.html"><span class="brand-mark">✈</span><span>Flyways<span class="brand-accent">Go</span><small>ADMIN PANEL</small></span></a><a href="index.html">← Customer website</a></div>
+  <section id="loginCard" class="admin-card"><h2>Admin sign in</h2><p class="muted">Use the Supabase Auth account you create for the administrator.</p><form id="loginForm" class="admin-form"><label>Email<input name="email" type="email" required></label><label>Password<input name="password" type="password" required></label><div><button class="button primary">Sign in</button></div></form><p id="loginMsg" class="form-message"></p></section>
+  <section id="dashboard" class="hidden">
+    <div class="admin-top"><h1 style="font-size:32px;letter-spacing:-1px">Booking dashboard</h1><button id="logout" class="button secondary">Sign out</button></div>
+    <section class="admin-card"><h2>Add flight deal</h2><form id="dealForm" class="admin-form">
+      <label>From<input name="origin" required maxlength="80"></label><label>To<input name="destination" required maxlength="80"></label><label>Airline<input name="airline" placeholder="Airline name"></label>
+      <label>Travel date / period<input name="travel_date" placeholder="e.g. Selected dates"></label><label>Indicative fare (₹)<input name="indicative_fare" type="number" min="1" required></label><label>Discount label<input name="discount_label" placeholder="Only genuine verified discount"></label>
+      <label class="wide">Notes<textarea name="notes" rows="2" placeholder="Fare validity and conditions"></textarea></label><div><button class="button primary">Publish deal</button></div>
+    </form><p id="dealMsg" class="form-message"></p></section>
+    <section class="admin-card"><div class="admin-top"><h2>Booking requests</h2><button id="refresh" class="button secondary">Refresh</button></div><p class="muted">Update status only after the relevant action is actually completed with your travel agent.</p><div class="table-scroll"><table class="admin-table"><thead><tr><th>Request</th><th>Customer / contact</th><th>Journey</th><th>Passengers</th><th>Status</th><th>Actions</th></tr></thead><tbody id="requestsBody"><tr><td colspan="6">Loading…</td></tr></tbody></table></div></section>
+    <section class="admin-card"><h2>Important operating rule</h2><p class="muted">Confirm current fare and seats with your authorized agent before collecting payment. Record confirmed fare, payment reference and ticket/PNR in your business records. Do not store card details, UPI PINs, passwords or agent portal credentials here.</p></section>
+  </section>
+</div><script src="admin.js"></script></body></html>

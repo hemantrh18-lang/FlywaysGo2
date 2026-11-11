@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FlywaysGo flight deals and booking requests.">
+  <title>FlywaysGo | Flight Deals & Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">✈</span><span>Flyways<span class="brand-accent">Go</span><small>YOUR JOURNEY, OUR PRIORITY</small></span></a>
+  <nav><a href="#deals">Flight Deals</a><a href="#how">How it works</a><a href="#support">Support</a><a class="nav-cta" href="#booking">Request booking</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">SMARTER WAY TO FLY</span>
+      <h1>Your next journey<br><em>starts here.</em></h1>
+      <p>Explore hand-picked flight deals and send us your booking request. Our travel partner will reconfirm the latest fare and availability before your ticket is issued.</p>
+      <div class="hero-points"><span>✓ Personal booking assistance</span><span>✓ Fare reconfirmation</span><span>✓ Ticket support</span></div>
+    </div>
+    <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="plane">✈</div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="hero-tag"><b>Fly with confidence</b><small>Deals • Support • Simplicity</small></div></div>
+  </section>
+
+  <section class="search-panel" id="booking">
+    <div class="section-kicker">START YOUR TRIP</div><h2>Request a flight booking</h2>
+    <p class="muted">Submit your travel details. This is a booking request, not an instant confirmed ticket.</p>
+    <form id="bookingForm" class="booking-grid">
+      <label>Trip type<select name="trip_type"><option>One-way</option><option>Round trip</option></select></label>
+      <label>From<input name="origin" placeholder="e.g. Bhopal" required maxlength="80"></label>
+      <label>To<input name="destination" placeholder="e.g. Mumbai" required maxlength="80"></label>
+      <label>Departure date<input name="departure_date" type="date" required></label>
+      <label>Return date<input name="return_date" type="date"></label>
+      <label>Adults<select name="adults"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label>
+      <label>Children<select name="children"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+      <label>Infants<select name="infants"><option>0</option><option>1</option><option>2</option><option>3</option></select></label>
+      <label class="wide">Passenger / contact name<input name="customer_name" placeholder="Your full name" required maxlength="120"></label>
+      <label>Mobile number<input name="phone" type="tel" inputmode="tel" placeholder="10-digit mobile number" required pattern="[0-9+() -]{8,20}" maxlength="20"></label>
+      <label>Email (optional)<input name="email" type="email" placeholder="you@example.com" maxlength="160"></label>
+      <label class="wide">Additional preference (optional)<textarea name="notes" rows="3" maxlength="1000" placeholder="Preferred airline, time, baggage needs, etc."></textarea></label>
+      <label class="consent wide"><input type="checkbox" name="consent" required> I agree that FlywaysGo may use these details to process this flight booking request and share necessary details with its authorized travel partner.</label>
+      <div class="wide"><button class="button primary" type="submit">Send booking request <span>→</span></button><p id="bookingMessage" class="form-message" role="status"></p></div>
+    </form>
+  </section>
+
+  <section class="deals-section" id="deals">
+    <div class="section-heading"><div><span class="section-kicker">HAND-PICKED OFFERS</span><h2>Explore flight deals</h2><p class="muted">Indicative offers only. Fare and seats are reconfirmed before payment.</p></div><span class="deal-note">Updated offers</span></div>
+    <div id="dealsGrid" class="deals-grid"><div class="empty-state">Loading flight deals…</div></div>
+  </section>
+
+  <section class="how-section" id="how">
+    <span class="section-kicker">SIMPLE & TRANSPARENT</span><h2>How booking works</h2>
+    <div class="steps">
+      <article><b>01</b><h3>Send request</h3><p>Share your route, date and passenger details.</p></article>
+      <article><b>02</b><h3>Fare reconfirmation</h3><p>Our travel partner checks current fare and seat availability.</p></article>
+      <article><b>03</b><h3>Approve & pay</h3><p>We share the final fare and applicable rules before payment.</p></article>
+      <article><b>04</b><h3>Receive ticket</h3><p>After ticket issuance, we share your e-ticket and booking reference.</p></article>
+    </div>
+  </section>
+  <section class="notice"><b>Important:</b> Flight deals shown here are not live inventory or confirmed reservations. Prices, schedules and seats can change. Do not make payment until you receive a fare confirmation and verified payment instructions from FlywaysGo.</section>
+</main>
+<footer id="support"><div class="footer-brand">Flyways<span>Go</span></div><p>Flight booking assistance through an authorized travel partner.</p><p>Support: <a href="mailto:support@flywaysgo.com">support@flywaysgo.com</a> · Replace this placeholder with your working support contact before launch.</p><small>© <span id="year"></span> FlywaysGo. All rights reserved. · <a href="privacy.html">Privacy notice</a></small></footer>
+<script src="app.js"></script>
+</body>
+</html>
